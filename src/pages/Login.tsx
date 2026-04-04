@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Input } from '../components/Input';
 import Button from '../components/Button';
 import { useAuth } from '../contexts/AuthContext';
+import { API_BASE_URL } from '../config';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -26,7 +27,7 @@ export default function Login() {
         setIsLoggingIn(true);
 
         try {
-            const response = await fetch("http://localhost:5000/login", {
+            const response = await fetch(`${API_BASE_URL}/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

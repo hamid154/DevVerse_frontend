@@ -1,10 +1,12 @@
+import { API_BASE_URL } from '../config';
+
 export async function askAI(prompt: string) {
   if (!prompt || !prompt.trim()) {
     throw new Error('Prompt cannot be empty');
   }
 
   // Securely request the custom Node backend
-  const response = await fetch("http://localhost:5000/ask-ai", {
+  const response = await fetch(`${API_BASE_URL}/ask-ai`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

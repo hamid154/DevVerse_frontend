@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Card from '../components/Card';
 import { Maximize2, Bot, Sparkles, Code } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { API_BASE_URL } from '../config';
 
 export default function CodePlayground() {
     const [html, setHtml] = useState('<div class="premium-box">\n  <h1>DevVerse Space</h1>\n  <p>Ask AI to build something crazy here.</p>\n</div>');
@@ -53,7 +54,7 @@ export default function CodePlayground() {
             1. Output raw JSON only. Do not wrap in markdown \`\`\`json blocks.
             2. Do not include any explanations.`;
 
-            const response = await fetch("http://localhost:5000/ask-ai", {
+            const response = await fetch(`${API_BASE_URL}/ask-ai`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ prompt: fullPrompt }),

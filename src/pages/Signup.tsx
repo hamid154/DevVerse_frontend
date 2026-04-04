@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Input } from '../components/Input';
 import Button from '../components/Button';
 import { useAuth } from '../contexts/AuthContext';
+import { API_BASE_URL } from '../config';
 
 export default function Signup() {
     // Shared State
@@ -46,7 +47,7 @@ export default function Signup() {
 
         try {
             // Initiate the OTP dispatch instead of blind database writing
-            const response = await fetch("http://localhost:5000/send-signup-otp", {
+            const response = await fetch(`${API_BASE_URL}/send-signup-otp`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, email, password }),
@@ -79,7 +80,7 @@ export default function Signup() {
         setIsVerifying(true);
 
         try {
-            const response = await fetch("http://localhost:5000/verify-signup", {
+            const response = await fetch(`${API_BASE_URL}/verify-signup`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, email, password, otp: otpCode }),

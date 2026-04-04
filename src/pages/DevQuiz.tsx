@@ -6,6 +6,7 @@ import GameModeSelector, { GameMode } from '../components/devquiz/GameModeSelect
 import ScoreBoard from '../components/devquiz/ScoreBoard';
 import ResultScreen from '../components/devquiz/ResultScreen';
 import QuestionCard from '../components/devquiz/QuestionCard';
+import { API_BASE_URL } from '../config';
 
 import { Question } from '../data/questions';
 
@@ -72,7 +73,7 @@ export default function DevQuiz() {
         2. 'options' must always have exactly 4 items.
         3. Do NOT wrap the JSON in markdown code blocks like \`\`\`json. Output raw JSON only. Do not say "Here is the quiz".`;
 
-        const response = await fetch("http://localhost:5000/ask-ai", {
+        const response = await fetch(`${API_BASE_URL}/ask-ai`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ prompt }),
