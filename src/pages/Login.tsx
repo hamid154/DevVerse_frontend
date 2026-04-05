@@ -35,14 +35,14 @@ export default function Login() {
                 body: JSON.stringify({ email, password }),
             });
             
-            const data = await response.text();
+            const data = await response.json();
 
-            if (response.ok && data === "Login successful") {
-                const userName = email.split('@')[0];
+            if (response.ok && (data.message === "Login successful" || data.message === "User registered successfully")) {
+                const userName = data.name || email.split('@')[0];
                 login({ name: userName, email: email });
                 navigate(from, { replace: true });
             } else {
-                setError(data || 'Invalid email or password');
+                setError(data.error || data.message || 'Invalid email or password');
             }
         } catch (err) {
             setError('Server connection failed. Please ensure the backend is running.');

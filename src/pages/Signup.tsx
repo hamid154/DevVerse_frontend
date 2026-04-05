@@ -35,13 +35,13 @@ export default function Signup() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, email, password }),
             });
-            const data = await response.text();
+            const data = await response.json();
 
-            if (response.ok && data === "Signup successful") {
+            if (response.ok && (data.message === "Signup successful" || data.message === "User registered successfully")) {
                 login({ name, email });
                 navigate('/');
             } else {
-                setError(data || 'Signup failed. Please try again.');
+                setError(data.error || data.message || 'Signup failed. Please try again.');
             }
         } catch (err) {
             console.error('Registration error:', err);
