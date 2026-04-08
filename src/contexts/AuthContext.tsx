@@ -1,45 +1,65 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 export interface User {
+  id: string;
   name: string;
   email: string;
 }
 
 interface AuthContextType {
   user: User | null;
-  login: (user: User) => void;
+  token: string | null;
+  login: (user: User, token: string) => void;
   logout: () => void;
+  isAuthenticated: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+// Helper function to decode JWT token (basic implementation)
+const decodeToken = (token: string) => {
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return payload;
+  } catch (error) {
+    return null;
+  }
+};
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
+  const [token, setToken] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check localStorage for active session
-    const activeSession = localStorage.getItem('devverse_session');
-    if (activeSession) {
-      try {
-        setUser(JSON.parse(activeSession));
-      } catch (e) {
-        console.error('Failed to parse active session');
-        localStorage.removeItem('devverse_session');
+    // Check localStorage for token
+    const storedToken = localStorage.getItem('devverse_token');
+    if (storedToken) {
+      const decoded = decodeToken(storedToken);
+      if (decoded && decoded.exp * 1000 > Date.now()) {
+        setToken(storedToken);
+        setUser({ id: decoded.id, name: decoded.name || '', email: decoded.email });
+      } else {
+        // Token expired, remove it
+        localStorage.removeItem('devverse_token');
       }
     }
     setIsLoading(false);
   }, []);
 
-  const login = (loggedInUser: User) => {
+  const login = (loggedInUser: User, authToken: string) => {
     setUser(loggedInUser);
-    localStorage.setItem('devverse_session', JSON.stringify(loggedInUser));
+    setToken(authToken);
+    localStorage.setItem('devverse_token', authToken);
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('devverse_session');
+    setToken(null);
+    localStorage.removeItem('devverse_token');
   };
+
+  const isAuthenticated = !!user && !!token;
 
   if (isLoading) {
     return (
@@ -50,7 +70,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, token, login, logout, isAuthenticated }}>
       {children}
     </AuthContext.Provider>
   );

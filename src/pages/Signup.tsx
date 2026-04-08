@@ -37,11 +37,11 @@ export default function Signup() {
             });
             const data = await response.json();
 
-            if (response.ok && (data.message === "Signup successful" || data.message === "User registered successfully")) {
-                login({ name, email });
+            if (response.ok) {
+                login(data.user, data.token);
                 navigate('/');
             } else {
-                setError(data.error || data.message || 'Signup failed. Please try again.');
+                setError(data.message || 'Signup failed. Please try again.');
             }
         } catch (err) {
             console.error('Registration error:', err);

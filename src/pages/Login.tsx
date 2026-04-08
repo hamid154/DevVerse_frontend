@@ -37,12 +37,11 @@ export default function Login() {
             
             const data = await response.json();
 
-            if (response.ok && (data.message === "Login successful" || data.message === "User registered successfully")) {
-                const userName = data.name || email.split('@')[0];
-                login({ name: userName, email: email });
+            if (response.ok) {
+                login(data.user, data.token);
                 navigate(from, { replace: true });
             } else {
-                setError(data.error || data.message || 'Invalid email or password');
+                setError(data.message || 'Invalid email or password');
             }
         } catch (err) {
             setError('Server connection failed. Please ensure the backend is running.');
