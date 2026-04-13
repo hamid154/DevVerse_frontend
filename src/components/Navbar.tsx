@@ -60,7 +60,7 @@ export default function Navbar() {
                             <div className="absolute inset-0 bg-primary/20 blur-md rounded-full group-hover:bg-primary/40 transition-colors"></div>
                             <Code className="w-8 h-8 text-primary relative z-10 group-hover:scale-110 transition-transform" />
                         </div>
-                        <span className="text-2xl font-black neon-text hidden xl:block tracking-wider">DevVerse</span>
+                        <span className="text-2xl font-black text-gradient-premium hidden xl:block tracking-tighter">DevVerse</span>
                     </Link>
 
                     <div className="flex space-x-2 flex-nowrap items-center flex-grow justify-start md:justify-center overflow-x-auto">
@@ -99,7 +99,7 @@ export default function Navbar() {
                         
                         <div className="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/50 dark:bg-surface/50 border border-slate-200 dark:border-white/10 transition-colors">
                             <User className="w-4 h-4 text-primary" />
-                            <span className="text-sm font-medium text-slate-700 dark:text-gray-300">{user.name.split(' ')[0]}</span>
+                            <span className="text-sm font-bold font-display text-slate-700 dark:text-gray-300">{user.name.split(' ')[0]}</span>
                         </div>
                         <button
                             onClick={logout}

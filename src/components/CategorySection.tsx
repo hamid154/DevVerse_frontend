@@ -33,7 +33,7 @@ export default function CategorySection({ title, tools }: CategorySectionProps) 
       ref={sectionRef}
       className={`mb-12 space-y-6 ${visible ? 'animate-fade-in' : 'opacity-0 translate-y-8'}`}
     >
-      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-purple-300 to-fuchsia-300">
+      <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-8 glass-heading">
         {title}
       </h2>
 

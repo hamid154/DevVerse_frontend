@@ -27,10 +27,10 @@ export default function ToolCard({ tool }: ToolCardProps) {
           <span className={`flex h-12 w-12 items-center justify-center rounded-xl ${tool.bg} ${tool.color}`}>
             <Icon className="h-6 w-6" />
           </span>
-          <h3 className="text-lg font-bold leading-tight text-slate-900 dark:text-white">{tool.name}</h3>
+          <h3 className="text-lg font-bold font-display leading-tight text-white tracking-tight">{tool.name}</h3>
         </div>
 
-        <p className="relative z-10 text-sm leading-6 text-slate-700 dark:text-slate-300 mb-5">{tool.description}</p>
+        <p className="relative z-10 text-sm leading-6 text-slate-400 mb-5 font-medium">{tool.description}</p>
 
         <div className="relative z-10 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-cyan-200 opacity-0 transition-all duration-300 group-hover:opacity-100">
           <span>Open</span>

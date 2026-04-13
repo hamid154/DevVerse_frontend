@@ -16,7 +16,7 @@ export default {
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
-                display: ['Outfit', 'sans-serif'],
+                display: ['Sora', 'sans-serif'],
             },
             animation: {
                 'glow': 'glow 2s ease-in-out infinite alternate',

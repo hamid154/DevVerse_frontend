@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,15 +6,47 @@
 
 :root {
   --backgroundColor: #05050A;
-  --accentColor: #0891b2; /* cyan-600 */
+  --accentColor: #0891b2;
 }
 
 @layer base {
   body {
-    @apply font-sans;
+    @apply font-sans bg-[#05050A] text-slate-300 antialiased selection:bg-cyan-500/30 selection:text-cyan-200;
+    line-height: 1.6;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tighter;
+  
+  h1, h2, h3 {
+    @apply font-display tracking-tighter text-white uppercase;
+    line-height: 1.1;
+  }
+  
+  h1 { @apply text-5xl md:text-7xl lg:text-8xl font-black; }
+  h2 { @apply text-3xl md:text-5xl font-extrabold; }
+  h3 { @apply text-xl md:text-2xl font-bold; }
+}
+
+@layer utilities {
+  .text-gradient-premium {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600;
+    background-size: 200% auto;
+    animation: textGradient 4s linear infinite;
+  }
+
+  @keyframes textGradient {
+    to { background-position: 200% center; }
+  }
+
+  .glass-heading {
+    @apply relative inline-block;
+  }
+  
+  .glass-heading::after {
+    content: '';
+    @apply absolute -inset-x-4 -inset-y-2 bg-cyan-500/10 blur-xl opacity-0 transition-opacity duration-500;
+  }
+  
+  .glass-heading:hover::after {
+    @apply opacity-100;
   }
 }
 

@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { motion } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import SocialIcons from '../components/socialicon';
 import CategorySection from '../components/CategorySection';
@@ -26,17 +27,27 @@ export default function Home() {
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="relative mt-12 mb-12 animate-fade-in text-center">
-        <div className="pointer-events-none absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-400/20 via-violet-400/10 to-pink-400/20 blur-3xl" />
+      <div className="relative mt-20 mb-24 animate-fade-in text-center px-4">
+        <div className="pointer-events-none absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 border border-cyan-500/20 rounded-full">
+            The Future of Development
+          </span>
+          <h1 className="relative mb-6">
+            Welcome, <span className="text-white">{user?.name.split(' ')[0] || 'Dev'}</span>
+            <span className="block text-gradient-premium mt-2">DevVerse Tool Hub</span>
+          </h1>
 
-        <h1 className="relative text-4xl font-black md:text-6xl mb-4 tracking-tight text-slate-900 dark:text-white">
-          Welcome, {user?.name.split(' ')[0] || 'Dev'}
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-purple-300 to-fuchsia-300">to DevVerse Tool Hub</span>
-        </h1>
-
-        <p className="relative text-sm md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Explore curated developer utilities grouped for speed and creativity. Search, filter, and launch tools instantly.
-        </p>
+          <p className="relative text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium">
+            Experience a curated ecosystem of next-gen developer utilities. 
+            <span className="text-slate-200"> Precisely crafted for high-performance engineers and creative builders.</span>
+          </p>
+        </motion.div>
       </div>
 
       <div className="mb-10 grid gap-4 sm:grid-cols-[1fr_auto]">
