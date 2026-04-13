@@ -40,7 +40,7 @@ export default function Home() {
           </span>
           <h1 className="relative mb-6">
             Welcome, <span className="text-white">{user?.name.split(' ')[0] || 'Dev'}</span>
-            <span className="block text-gradient-premium mt-2">DevVerse Tool Hub</span>
+            <span className="block text-gradient-premium mt-2 font-accent tracking-normal text-3xl md:text-5xl">DevVerse Tool Hub</span>
           </h1>
 
           <p className="relative text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium">
