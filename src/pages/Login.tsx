@@ -52,15 +52,16 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-[90vh] flex items-center justify-center p-4 lg:p-8 bg-slate-50 dark:bg-transparent overflow-hidden relative">
-            {/* Background Atmosphere Effects */}
-            <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
-            <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="min-h-screen flex items-center justify-center p-4 lg:p-12 bg-[#05050A] overflow-hidden relative">
+            {/* DEEP SPACE NEBULA EFFECTS */}
+            <div className="absolute top-0 right-0 w-[60vw] h-[60vw] bg-blue-900/10 rounded-full blur-[150px] pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-cyan-900/10 rounded-full blur-[150px] pointer-events-none"></div>
+            <div className="fixed inset-0 grid-background pointer-events-none opacity-20 z-0"></div>
 
-            <main className="w-full max-w-6xl flex flex-col lg:flex-row bg-white/40 dark:bg-[#0f111a]/80 backdrop-blur-3xl border border-white/40 dark:border-white/10 rounded-[2rem] shadow-2xl overflow-hidden relative z-10 min-h-[600px] xl:min-h-[700px]">
+            <main className="w-full max-w-6xl flex flex-col lg:flex-row bg-white/5 border border-white/10 rounded-[2.5rem] shadow-2xl overflow-hidden relative z-10 min-h-[750px] backdrop-blur-3xl transition-all">
                 
-                {/* LEFT SIDE: DYNAMIC FORM WIZARD */}
-                <div className="w-full lg:w-1/2 p-8 lg:p-12 xl:p-16 flex flex-col justify-center relative overflow-hidden">
+                {/* LEFT SIDE: Login Form */}
+                <div className="w-full lg:w-1/2 p-8 lg:p-16 flex flex-col justify-center relative overflow-hidden bg-black/40">
                     <motion.div 
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -68,12 +69,11 @@ export default function Login() {
                         className="max-w-md w-full mx-auto"
                     >
                         <div className="mb-10 text-center lg:text-left">
-                            <h1 className="text-4xl font-black mb-2 text-slate-900 dark:text-white tracking-tight">
+                            <h1 className="text-4xl xl:text-5xl font-black mb-2 text-white tracking-tighter">
                                 Sign In
                             </h1>
-                            <p className="text-slate-600 dark:text-gray-400 font-medium tracking-wide flex items-center justify-center lg:justify-start gap-2">
-                                <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                                Secure access to your workspace
+                            <p className="text-slate-500 font-medium tracking-wide flex items-center justify-center lg:justify-start gap-2 italic">
+                                01 // Secure access to your workspace
                             </p>
                         </div>
 
@@ -198,10 +198,12 @@ export default function Login() {
                             <span className="text-xs font-bold tracking-wider text-cyan-100 uppercase">Interactive Playground</span>
                         </motion.div>
                         
-                        <h2 className="text-4xl xl:text-5xl font-black text-white mb-6 leading-[1.1] tracking-tight">
-                            Welcome Back to <br/>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-primary to-purple-500 neon-text">DevVerse 🚀</span>
+                        <h2 className="text-4xl xl:text-7xl font-light text-white mb-2 leading-none tracking-[0.4em] font-accent uppercase">
+                            Welcome
                         </h2>
+                        <h3 className="text-xl xl:text-3xl font-black text-gradient-premium tracking-[0.2em] mb-8 font-display uppercase italic">
+                            DEVVERSE TYPEFACE
+                        </h3>
                         
                         <p className="text-lg xl:text-xl text-slate-300/80 mb-12 leading-relaxed font-medium">
                             Your futuristic developer ecosystem. Build, scale, and visualize the next generation of software with unbreakable security.

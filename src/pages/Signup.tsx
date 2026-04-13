@@ -52,11 +52,13 @@ export default function Signup() {
     };
 
     return (
-        <div className="min-h-[90vh] flex items-center justify-center p-4 lg:p-8 bg-slate-50 dark:bg-transparent overflow-hidden relative">
-            <div className="absolute top-[-10%] right-[-10%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
-            <div className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] bg-emerald-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="min-h-screen flex items-center justify-center p-4 lg:p-12 bg-[#05050A] overflow-hidden relative">
+            {/* DEEP SPACE NEBULA EFFECTS */}
+            <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-emerald-900/10 rounded-full blur-[150px] pointer-events-none"></div>
+            <div className="absolute bottom-0 right-0 w-[40vw] h-[40vw] bg-cyan-900/10 rounded-full blur-[150px] pointer-events-none"></div>
+            <div className="fixed inset-0 grid-background pointer-events-none opacity-20 z-0"></div>
 
-            <main className="w-full max-w-6xl flex flex-col lg:flex-row-reverse bg-white/40 dark:bg-[#0f111a]/80 backdrop-blur-3xl border border-white/40 dark:border-white/10 rounded-[2rem] shadow-2xl overflow-hidden relative z-10 min-h-[600px] xl:min-h-[700px]">
+            <main className="w-full max-w-6xl flex flex-col lg:flex-row-reverse bg-white/5 border border-white/10 rounded-[2.5rem] shadow-2xl overflow-hidden relative z-10 min-h-[750px] backdrop-blur-3xl transition-all">
                 <div className="w-full lg:w-1/2 p-8 lg:p-12 xl:p-16 flex flex-col justify-center relative overflow-hidden">
                     <AnimatePresence mode="wait">
                         <motion.div 
@@ -194,10 +196,12 @@ export default function Signup() {
                             <span className="text-xs font-bold tracking-wider text-emerald-100 uppercase">Enterprise Verification</span>
                         </motion.div>
                         
-                        <h2 className="text-4xl xl:text-5xl font-black text-white mb-6 leading-[1.1] tracking-tight">
-                            Start Building With <br/>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-primary to-cyan-500 neon-text">Instant Access</span>
+                        <h2 className="text-4xl xl:text-7xl font-light text-white mb-2 leading-none tracking-[0.4em] font-accent uppercase">
+                            Initialize
                         </h2>
+                        <h3 className="text-xl xl:text-3xl font-black text-gradient-premium tracking-[0.2em] mb-8 font-display uppercase italic">
+                            DEVVERSE TYPEFACE
+                        </h3>
                         
                         <p className="text-lg xl:text-xl text-slate-300/80 mb-12 leading-relaxed font-medium">
                             Join our integrated developer ecosystem instantly. No more waiting for OTPs—just create and code.
