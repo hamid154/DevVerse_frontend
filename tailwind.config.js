@@ -15,7 +15,8 @@ export default {
                 accent: '#06b6d4',
             },
             fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
+                sans: ['Inter', 'sans-serif'],
+                display: ['Outfit', 'sans-serif'],
             },
             animation: {
                 'glow': 'glow 2s ease-in-out infinite alternate',
