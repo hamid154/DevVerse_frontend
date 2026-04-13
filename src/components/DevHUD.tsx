@@ -18,7 +18,7 @@ const DevHUD = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-6 left-6 z-[100] hidden lg:block pointer-events-auto">
+    <div className="fixed bottom-6 right-6 z-[100] hidden lg:block pointer-events-auto">
       <AnimatePresence mode="wait">
         {!isOpen ? (
           <motion.button
