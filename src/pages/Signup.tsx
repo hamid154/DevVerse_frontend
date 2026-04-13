@@ -45,15 +45,15 @@ export default function Signup() {
     };
 
     return (
-        <div className="min-h-screen bg-[#0B0F19] text-slate-200 font-sans selection:bg-cyan-500/30 overflow-hidden flex items-center justify-center p-4 lg:p-0">
+        <div className="min-h-screen bg-[#0B0F19] text-slate-200 font-sans selection:bg-cyan-500/30 overflow-x-hidden flex items-center justify-center p-0 sm:p-4 lg:p-8">
             {/* AMBIENT BACKGROUND */}
             <div className="fixed inset-0 grid-background opacity-[0.03] pointer-events-none"></div>
             <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-emerald-500/5 via-transparent to-cyan-500/5 pointer-events-none"></div>
 
-            <main className="w-full max-w-7xl flex flex-col lg:flex-row-reverse bg-[#0D121F]/80 backdrop-blur-3xl border border-white/5 lg:rounded-[32px] shadow-[0_32px_128px_-16px_rgba(0,0,0,0.5)] overflow-hidden relative z-10 lg:min-h-[850px]">
+            <main className="w-full max-w-7xl flex flex-col lg:flex-row-reverse bg-[#0D121F]/80 backdrop-blur-3xl border-y sm:border border-white/5 sm:rounded-[32px] shadow-[0_32px_128px_-16px_rgba(0,0,0,0.5)] overflow-hidden relative z-10 min-h-screen sm:min-h-fit lg:min-h-[850px]">
                 
                 {/* RIGHT: SIGNUP FORM */}
-                <div className="w-full lg:w-1/2 p-8 lg:p-20 flex flex-col justify-center border-l border-white/5">
+                <div className="w-full lg:w-1/2 p-6 sm:p-10 lg:p-20 flex flex-col justify-center border-b lg:border-b-0 lg:border-l border-white/10 sm:border-white/5">
                     <motion.div 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
