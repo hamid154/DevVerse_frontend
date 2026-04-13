@@ -5,6 +5,7 @@ import {
   Palette,
   StickyNote,
   Map,
+  Zap,
   LucideIcon,
 } from 'lucide-react';
 
@@ -22,6 +23,16 @@ export interface ToolItem {
 }
 
 export const tools: ToolItem[] = [
+  {
+    id: 'ai-assistant',
+    name: 'AI Assistant',
+    description: 'Chat with your technical copilot for debugging and logic.',
+    icon: Zap,
+    path: '/ai-assistant',
+    category: 'Coding Tools',
+    color: 'text-orange-400',
+    bg: 'bg-orange-400/20',
+  },
   {
     id: 'ai-roadmaps',
     name: 'AI Roadmaps',
@@ -81,5 +92,15 @@ export const tools: ToolItem[] = [
     category: 'Fun Tools',
     color: 'text-pink-400',
     bg: 'bg-pink-400/20',
+  },
+  {
+    id: 'ai-assistant',
+    name: 'AI Assistant',
+    description: 'Chat with your technical copilot for debugging and logic.',
+    icon: Zap,
+    path: '/ai-assistant',
+    category: 'Coding Tools',
+    color: 'text-orange-400',
+    bg: 'bg-orange-400/20',
   },
 ];

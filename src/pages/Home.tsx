@@ -56,8 +56,8 @@ export default function Home() {
           </div>
 
           <h1 className="relative">
-            <span className="block text-slate-900 dark:text-gray-100 font-display text-4xl md:text-7xl font-light tracking-tighter mb-2">Welcome, {user?.name.split(' ')[0] || 'Dev'}</span>
-            <span className="block font-accent text-3xl md:text-6xl text-gradient-premium tracking-wide">DevVerse Tool Hub</span>
+            <span className="block text-slate-900 dark:text-gray-100 font-display text-3xl md:text-7xl font-light tracking-tighter mb-2 leading-tight">Welcome, {user?.name.split(' ')[0] || 'Dev'}</span>
+            <span className="block font-accent text-2xl md:text-6xl text-gradient-premium tracking-wide leading-tight">DevVerse Tool Hub</span>
           </h1>
 
           <p className="max-w-xl mx-auto text-sm md:text-lg text-slate-600 dark:text-slate-400 font-medium leading-[1.8] opacity-80">
