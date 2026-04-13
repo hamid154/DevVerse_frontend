@@ -11,12 +11,12 @@
 
 @layer base {
   body {
-    @apply font-sans bg-[#05050A] text-slate-300 antialiased selection:bg-cyan-500/30 selection:text-cyan-200;
+    @apply font-sans bg-slate-50 dark:bg-[#05050A] text-slate-800 dark:text-slate-300 antialiased selection:bg-cyan-500/30 selection:text-cyan-200;
     line-height: 1.6;
   }
   
   h1, h2, h3 {
-    @apply font-display tracking-tighter text-white;
+    @apply font-display tracking-tighter text-slate-900 dark:text-white;
     line-height: 1.2;
   }
   

@@ -39,13 +39,13 @@ export default function Home() {
             The Future of Development
           </span>
           <h1 className="relative mb-6">
-            Welcome, <span className="text-white">{user?.name.split(' ')[0] || 'Dev'}</span>
+            Welcome, <span className="text-slate-900 dark:text-white">{user?.name.split(' ')[0] || 'Dev'}</span>
             <span className="block text-gradient-premium mt-2 font-accent tracking-normal text-3xl md:text-5xl">DevVerse Tool Hub</span>
           </h1>
 
-          <p className="relative text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="relative text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium">
             Experience a curated ecosystem of next-gen developer utilities. 
-            <span className="text-slate-200"> Precisely crafted for high-performance engineers and creative builders.</span>
+            <span className="text-slate-900 dark:text-slate-200"> Precisely crafted for high-performance engineers and creative builders.</span>
           </p>
         </motion.div>
       </div>
